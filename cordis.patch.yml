@@ -1,0 +1,7 @@
+# Cordis Framework Patch Declaration for @liuhange/dsh-dream-reflect-lite
+#
+# 只使用 DSH loader 真正支持的 `- insert:` 形状（`id` + `name`）。
+# 旧的 `target/action/entry` 形状会被 loader 静默跳过，等于装上但没插进去。
+- insert:
+    - id: "@liuhange/dsh-dream-reflect-lite"
+      name: "@liuhange/dsh-dream-reflect-lite"

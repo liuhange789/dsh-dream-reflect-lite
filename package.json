@@ -1,0 +1,65 @@
+{
+  "name": "@liuhange/dsh-dream-reflect-lite",
+  "version": "0.1.0",
+  "description": "轻量级跨会话反思卡片：轮次结束时提炼 3–5 条可复用事实写入 .dsh/reflections，新会话自动加载最近 3 张卡片",
+  "author": "liuhange789",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liuhange789/dsh-dream-reflect-lite.git"
+  },
+  "homepage": "https://github.com/liuhange789/dsh-dream-reflect-lite",
+  "bugs": {
+    "url": "https://github.com/liuhange789/dsh-dream-reflect-lite/issues"
+  },
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "link-host-types": "node scripts/link-host-types.mjs",
+    "verify:contract": "node scripts/verify-contract.mjs",
+    "pack:check": "npm pack --dry-run"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "dsh",
+    "reflection",
+    "session-memory",
+    "cross-session",
+    "context",
+    "plugin",
+    "typescript",
+    "nodejs"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  }
+}
